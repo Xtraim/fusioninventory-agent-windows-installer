@@ -7,6 +7,7 @@ agent:
 core:
 * Don't forget to remove logs folder on uninstall
 * WakeOnlan task supported again
+* fix: update logfile option when installdir is not the default
 * fix: rc & development releases installers are now running with installer debug
   option enabled. This creates the debug subfolder to put in command parser log
   and computed Options.ini file.
