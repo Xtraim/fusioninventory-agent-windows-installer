@@ -30,6 +30,9 @@ strawberry perl package:
 * Based on Strawberry Perl 5.28.2.1 (May 2019) revision 2
 * Includes Net::Pcap support
 
+build process:
+* Also build portable versions from Appveyor
+
 2.5 Sat, 13 Apr 2019
 agent:
 * FusionInventory Agent 2.5 (commit: 4d01dfac65 | date: apr 12 2019)
