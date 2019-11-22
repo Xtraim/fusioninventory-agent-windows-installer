@@ -1,5 +1,56 @@
 FusionInventory Agent Windows Installer - History of Revisions and Changes
 
+2.5.2 not released yet
+agent:
+* FusionInventory Agent 2.5.2 not released yet
+* fix HTTP server IPv6
+* win32: always detach agent thread after 10 seconds when stopping the agent
+  service when it is blocking on anything to guaranty the service stops in 10s max
+* check agent persistent datas for a "forcerun" set flag. This is firstly intended
+  to be used by win32 installer to handle the "start inventory after installation"
+  option directly from the service.
+  This can also be used to change or reset the agent deviceid.
+* Add --set-forcerun option support to fusioninventory-agent script
+* fix: don't reschedule too early on a forced run at start
+* fix: Don't use delaytime on config reload
+* fix: use target counters reset to better support config reload
+* feature: limit next run delay reduction
+  Limit next run random delay reduction to max 1/6 of the delay if less than 6 hours,
+  limit to max an hour for delay from 6 hours to 24 hours,
+  and limit to max 1/24 of the delay for delay greater than a day.
+  This would keep enough delay randomization to avoid mass agent server connection and
+  keep next seen run more coherent with the requested delay.
+* added Samsung monitor serial support for models: B1940MR, B1940W, S22A450BW,
+  S22B420, S22E450, S22F350FHU, S27D390H, S27D850T, S27H850QFU, S19A450, SM943BM,
+  S22C450, S27H650FDU
+* win32: fix hyperv host wasn't filtered from installed virtual machines
+* win32: fix Adobe key detection, thanks to PR-gh
+* win32: fix firewall inventory cases, thanks to PR-gh
+* win32: fix Office license inventory, thanks to PR-gh
+* win32: enhanced network card inventory, thanks to PR-gh
+* Add Tagged VLAN, work at least with HPE Switch, thanks to PR-gh
+* Enhanced Qlogic support to report device serial number, thanks to po1vo
+* Added StormShield support via FreeBSD MIBSupport, thanks to PR-gh
+* Fix memory and storage size normalization in some cases, thanks to PR-gh
+* fix #738: fix time expiration when netinventory is chained with netdiscovery
+  while using fusioninventory-netdiscovery script --inventory option
+* fix #741: device with empty description was no more inventoried
+* fix #726: Added support for latest SPARC cpus on Solaris
+* fix #717: use cdpCacheSysName when available to enhance connection detection
+  Try also to extract remote mac address from deviceId when possible (fix Meraki
+  connection detection, even support Yealink SIP phones)
+
+core:
+* Update PCI IDs database (pci.ids file) to 2019.11.10
+* Update USB IDs database (usb.ids file) to 2019.11.05
+
+strawberry perl package:
+* Based on Strawberry Perl 5.30.0.1 (May 2019) revision 2
+* Includes XML::XPath support for UWP software inventory
+
+tools:
+* Updated dmidecode to v3.2 (update 2)
+
 2.5.1 Tue, 02 Jul 2019
 agent:
 * FusionInventory Agent 2.5.1 (commit: 48a1ef9734 | date: jul 02 2019)
@@ -38,7 +89,6 @@ agent:
   Add --dump and --dumpfile option to help ESX support debugging
 
 core:
-* Don't forget to remove logs folder on uninstall
 * WakeOnlan task supported again
 * fix: update logfile option when installdir is not the default
 * set "add-firewall-exception" by default now
