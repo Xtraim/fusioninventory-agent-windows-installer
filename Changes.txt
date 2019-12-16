@@ -1,8 +1,8 @@
 FusionInventory Agent Windows Installer - History of Revisions and Changes
 
-2.5.2 not released yet
+2.5.2 Mon, 16 Dec 2019
 agent:
-* FusionInventory Agent 2.5.2 not released yet
+* FusionInventory Agent 2.5.2 (commit: 7f6ee84481 | date: dec 16 2019)
 * fix HTTP server IPv6
 * win32: always detach agent thread after 10 seconds when stopping the agent
   service when it is blocking on anything to guaranty the service stops in 10s max
@@ -20,6 +20,12 @@ agent:
   and limit to max 1/24 of the delay for delay greater than a day.
   This would keep enough delay randomization to avoid mass agent server connection and
   keep next seen run more coherent with the requested delay.
+* fix service shutdown when HTTP client close the connection before the agent
+* fix HTTP server keep-alive support with a 8 requests by connection maximum limit
+* service update to support a safe forking system to firstly support handling
+  parallel http request for the Proxy HTTP server plugin.
+* Proxy HTTP server plugin now support max_proxy_threads configuration which is
+  set to 10 maximum concurrent requests by default.
 * added Samsung monitor serial support for models: B1940MR, B1940W, S22A450BW,
   S22B420, S22E450, S22F350FHU, S27D390H, S27D850T, S27H850QFU, S19A450, SM943BM,
   S22C450, S27H650FDU
@@ -28,6 +34,8 @@ agent:
 * win32: fix firewall inventory cases, thanks to PR-gh
 * win32: fix Office license inventory, thanks to PR-gh
 * win32: enhanced network card inventory, thanks to PR-gh
+* win32: fix software inventory failing due to unsupported UTF-16 Appx manifest XML
+* fix #359: try to obtain remote management litemanager ID under win32
 * Add Tagged VLAN, work at least with HPE Switch, thanks to PR-gh
 * Enhanced Qlogic support to report device serial number, thanks to po1vo
 * Added StormShield support via FreeBSD MIBSupport, thanks to PR-gh
@@ -39,9 +47,21 @@ agent:
 * fix #717: use cdpCacheSysName when available to enhance connection detection
   Try also to extract remote mac address from deviceId when possible (fix Meraki
   connection detection, even support Yealink SIP phones)
+* fix #684: Added IAP Aruba serial number support
+* moved APC pdu support to mibsupport, thanks to po1vo
+* fix #751: Added Seagate storage support
+* enhanced VLAN support
+* fix #734: Fix issue with Ricoh printers
+* fix #722: Enhance LinuxAppliance support with Sophos UTG support
+* improved Ricoh printer support
+* Updated sysobject.ids (tagged fia-2.5.2 tag on github repository)
 
 core:
-* Update PCI IDs database (pci.ids file) to 2019.11.10
+* /runnow involves now to force a run at next service or command start
+* Installer supports now a portable install mode, it is used to build the
+  portable package
+* Don't forget to install HTTP server plugin default configurations
+* Update PCI IDs database (pci.ids file) to 2019.12.11
 * Update USB IDs database (usb.ids file) to 2019.11.05
 
 strawberry perl package:
@@ -50,6 +70,7 @@ strawberry perl package:
 
 tools:
 * Updated dmidecode to v3.2 (update 2)
+* Updated sed to 4.7
 
 2.5.1 Tue, 02 Jul 2019
 agent:
