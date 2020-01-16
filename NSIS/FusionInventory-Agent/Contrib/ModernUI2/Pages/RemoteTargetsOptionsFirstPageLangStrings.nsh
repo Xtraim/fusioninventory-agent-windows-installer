@@ -72,7 +72,7 @@ LangString RemoteTargetsOptionsFirstPage_Label1_Text ${LANG_SPANISH} "Directorio
 
 ; RemoteTargetsOptionsFirstPage_Button1_Text
 LangString RemoteTargetsOptionsFirstPage_Button1_Text ${LANG_ENGLISH} "Browser..."
-LangString RemoteTargetsOptionsFirstPage_Button1_Text ${LANG_FRENCH} "Parcouris..."
+LangString RemoteTargetsOptionsFirstPage_Button1_Text ${LANG_FRENCH} "Parcourir..."
 LangString RemoteTargetsOptionsFirstPage_Button1_Text ${LANG_SPANISH} "Examinar..."
 
 ; RemoteTargetsOptionsFirstPage_Label2_Text
@@ -82,7 +82,7 @@ LangString RemoteTargetsOptionsFirstPage_Label2_Text ${LANG_SPANISH} "Fichero de
 
 ; RemoteTargetsOptionsFirstPage_Button2_Text
 LangString RemoteTargetsOptionsFirstPage_Button2_Text ${LANG_ENGLISH} "Browser..."
-LangString RemoteTargetsOptionsFirstPage_Button2_Text ${LANG_FRENCH} "Parcouris..."
+LangString RemoteTargetsOptionsFirstPage_Button2_Text ${LANG_FRENCH} "Parcourir..."
 LangString RemoteTargetsOptionsFirstPage_Button2_Text ${LANG_SPANISH} "Examinar..."
 
 ; RemoteTargetsOptionsFirstPage_Label3_Text
