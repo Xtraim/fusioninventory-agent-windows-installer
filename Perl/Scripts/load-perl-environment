@@ -86,7 +86,10 @@ else
    if [ -n "$V" ]; then
       let ${V//./ }
       let MAJ=0$1 MIN=0$2 REV=0$3
-      V="$MAJ.$MIN.$((9900+REV))"
+      V="$MAJ.$MIN"
+      if [ "$REV" -gt "0" ]; then
+         V="$V.$REV"
+      fi
    fi
    if [ -n "$REPO_COMMIT" ]; then
       V="$V-git$REPO_COMMIT"
