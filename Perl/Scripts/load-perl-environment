@@ -82,7 +82,12 @@ else
    else
       REPO_COMMIT="$(LANG=C git log -1 --format=%h 2>/dev/null)"
    fi
-   V="$(LANG=C head -3 ../../Changes.txt 2>/dev/null | tail -1 | sed -re 's/[ -].*//')"
+   if [ -e "../Changes.txt" ]; then
+      CHANGES=../Changes.txt
+   else
+      CHANGES=../../Changes.txt
+   fi
+   V="$(LANG=C head -3 $CHANGES 2>/dev/null | tail -1 | sed -re 's/[ -].*//')"
    if [ -n "$V" ]; then
       set ${V//./ }
       let MAJ=0$1 MIN=0$2 REV=0$3
