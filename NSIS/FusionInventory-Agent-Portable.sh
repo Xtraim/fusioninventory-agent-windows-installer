@@ -115,6 +115,9 @@ echo -n "Building ${arch} portable archive..."
 # Unset and comment not used logfile path in portable.cfg
 /bin/sed -i -e "s|^logfile.*$|#logfile =|" "Portable/FusionInventory-Agent/etc/conf.d/portable.cfg"
 
+# Portable version should not use registry as default backend, this sed comments the l.105 in Config.pm
+/bin/sed -i -e "s|^        \$OSNAME|        #\$OSNAME|" "Portable/FusionInventory-Agent/perl/agent/FusionInventory/Agent/Config.pm"
+
 ( cd Portable ; 7z a -bd -sfx7z.sfx -stl -y "../${installer%.exe}-portable.exe" "FusionInventory-Agent" >../7z-${arch}-portable.txt 2>&1; )
 if (( $? == 0 )); then
    echo '.Done!'
