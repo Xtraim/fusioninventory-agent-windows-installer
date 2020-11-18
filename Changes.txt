@@ -1,5 +1,45 @@
 FusionInventory Agent Windows Installer - History of Revisions and Changes
 
+2.6 not released yet
+agent:
+* FusionInventory Agent 2.6 (not released yet)
+* as explain in Version.pm comments, actual versioning is problematic for CPAN versions,
+  so any future version will probably be defined as only major.minor but evantually
+  as major.minor_rev if a package revision is necessary. This policy could be revised
+  after any major upgrade.
+* Fix configuration reloading to keep set script options
+* Avoid a not critical perl error while reloading HTTP server
+* Fix #771: added Acer monitor serial support for models (G227HQL, G236HL, R221Q, S273HL)
+* Battery capacity support provides now canonical values
+* Battery capacity support permits to compute battery capacity usage, thanks to Thierry Bugier
+* Fix #819: Surface Go 2 was recongized has Hyper-V
+* Fix #829: added other Acer monitor serial support (H226HQL, K222HQL, SA220Q)
+* Dmidecode output parsing cleanup
+* Better canonical manufacturer reporting
+* Added PartNumber API to enhanced inventory memory and controllers support:
+ * Elpida, Hynix, Micron & Samsung memory partnumbers
+ * Dell controller partnumbers
+* thanks to Vadim Pisarev:
+ * Memory inventory includes partnumber as MODEL
+ * Controller inventory includes SERIAL and MODEL
+ * Micron memories PartNumber support
+* Updated Ricoh printers support with better hostname detection
+* Updated Zebra printers support with better hostname detection
+* Introduced Siemens industrial modules support
+* Introduced Multitech industrial modules support
+* Fix #823, #856: Add Ubiquiti UniFi AP linux appliance support
+* Fix #772: Enhanced some HP switchs support
+* Introduced Hwg support, thanks to Bertrand Keller
+* injector: Fix an issue with --xml-ua option triggering a perl fatal error on empty or wrong XML files
+
+core:
+* Portable version don't rely on registry config backend by default
+* Update PCI IDs database (pci.ids file) to 2019.12.11
+* Update USB IDs database (usb.ids file) to 2019.11.05
+
+strawberry perl package:
+* Based on Strawberry Perl 5.32.0.1 (August 2020) revision 1
+
 2.5.2 Mon, 16 Dec 2019
 agent:
 * FusionInventory Agent 2.5.2 (commit: 7f6ee84481 | date: dec 16 2019)
