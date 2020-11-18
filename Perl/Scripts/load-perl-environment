@@ -75,7 +75,13 @@ if [ -n "${APPVEYOR_REPO_TAG_NAME}" ]; then
 elif [ -n "${FIA_RELEASE}" ]; then
    declare -r fusinv_agent_release="${FIA_RELEASE}"
 else
-   REPO_COMMIT="$(LANG=C git log -1 --format=%h 2>/dev/null)"
+   declare -r fusinv_agent_commit="develop"
+   declare -r TYPE="development"
+   if [ -n "${APPVEYOR_REPO_COMMIT}" ]; then
+      REPO_COMMIT="$( echo ${APPVEYOR_REPO_COMMIT} | cut -c -f 1-8)"
+   else
+      REPO_COMMIT="$(LANG=C git log -1 --format=%h 2>/dev/null)"
+   fi
    V="$(LANG=C head -3 ../../Changes.txt 2>/dev/null | tail -1 | sed -re 's/[ -].*//')"
    if [ -n "$V" ]; then
       let ${V//./ }
@@ -83,7 +89,7 @@ else
       V="$MAJ.$MIN.$((9900+REV))"
    fi
    if [ -n "$REPO_COMMIT" ]; then
-      declare -r fusinv_agent_commit="$REPO_COMMIT"
+      V="$V-git$REPO_COMMIT"
    fi
    declare -r fusinv_agent_release="$V"
 fi
