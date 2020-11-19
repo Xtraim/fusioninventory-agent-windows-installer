@@ -41,10 +41,10 @@
 #
 # ------------------------------------------------------------------------
 
+declare -r installer="$1"
+
 # Load perl environment
 source ../Perl/Scripts/load-perl-environment
-
-declare -r installer="$1"
 
 declare arch=''
 declare digest=''

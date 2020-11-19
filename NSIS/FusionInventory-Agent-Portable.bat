@@ -47,11 +47,12 @@ for %%p in (".") do pushd "%%~fsp"
 cd /d "%~dp0"
 
 set MINGW_PATH=%SYSTEMDRIVE%\MinGW
-set MSYS_PATH=%MINGW_PATH%\msys\1.0
-set MSYSTEM=MSYS
 
 if not exist "%MINGW_PATH%" goto mingw_not_installed
 :: MinGW/MSYS is already installed
+
+:: Load gnu utilities environment
+call ..\Perl\Scripts\load-gnu-utilities-environment.bat
 
 del /Q *-portable.exe 2>nul
 
@@ -60,6 +61,9 @@ FOR %%I IN (*.exe) DO (
     start /W %%I /S /acceptlicense /installtype=from-scratch /execmode=portable /installtasks=Full /logger=stderr /installdir=%~dp0\Portable\FusionInventory-Agent
     %MSYS_PATH%\bin\bash.exe "%~dpn0.sh" %%I
 )
+
+:: Unload gnu utilities environment
+call ..\Perl\Scripts\unload-gnu-utilities-environment.bat
 
 goto end_of_file
 
