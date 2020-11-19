@@ -112,9 +112,6 @@ echo -n "Building ${arch} portable archive..."
 # Add data dir
 /bin/install --directory "Portable/FusionInventory-Agent/data"
 
-# Unset and comment not used logfile path in portable.cfg
-/bin/sed -i -e "s|^logfile.*$|#logfile =|" "Portable/FusionInventory-Agent/etc/conf.d/portable.cfg"
-
 # Portable version should not use registry as default backend, this sed comments the l.105 in Config.pm
 /bin/sed -i -e "s|^        \$OSNAME|        #\$OSNAME|" "Portable/FusionInventory-Agent/perl/agent/FusionInventory/Agent/Config.pm"
 
