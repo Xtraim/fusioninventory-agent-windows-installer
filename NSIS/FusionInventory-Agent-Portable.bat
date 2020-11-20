@@ -58,7 +58,7 @@ del /Q *-portable.exe 2>nul
 
 FOR %%I IN (*.exe) DO (
     echo Running %%I
-    start /W %%I /S /acceptlicense /installtype=from-scratch /execmode=portable /installtasks=Full /logger=stderr /installdir=%~dp0\Portable\FusionInventory-Agent /logfile=""
+    start /W %%I /S /acceptlicense /installtype=from-scratch /execmode=portable /installtasks=Full /logger=stderr /installdir=%~dp0\Portable\FusionInventory-Agent
     %MSYS_PATH%\bin\bash.exe "%~dpn0.sh" %%I
 )
 
