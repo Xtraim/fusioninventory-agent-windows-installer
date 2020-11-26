@@ -1,8 +1,8 @@
 FusionInventory Agent Windows Installer - History of Revisions and Changes
 
-2.6 not released yet
+2.6 Thu, 26 Nov 2020
 agent:
-* FusionInventory Agent 2.6 (not released yet)
+* FusionInventory Agent 2.6 (commit: e4192a2 | date: nov 26 2020)
 * as explain in Version.pm comments, actual versioning is problematic for CPAN versions,
   so any future version will probably be defined as only major.minor but evantually
   as major.minor_rev if a package revision is necessary. This policy could be revised
@@ -39,6 +39,9 @@ core:
 
 strawberry perl package:
 * Based on Strawberry Perl 5.32.0.1 (August 2020) revision 1
+
+tools:
+* Updated dmidecode to v3.3-gitd64af97
 
 2.5.2 Mon, 16 Dec 2019
 agent:
