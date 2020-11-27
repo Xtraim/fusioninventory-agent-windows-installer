@@ -304,6 +304,14 @@
    SetOutPath "$R0\perl\agent\FusionInventory\Agent\Tools\Standards"
    File /r "${FIA_DIR}\lib\FusionInventory\Agent\Tools\Standards\*.*"
 
+   ; Install $R0\perl\agent\FusionInventory\Agent\Tools\Storages\*.*
+   SetOutPath "$R0\perl\agent\FusionInventory\Agent\Tools\Storages"
+   File /r "${FIA_DIR}\lib\FusionInventory\Agent\Tools\Storages\*.*"
+
+   ; Install $R0\perl\agent\FusionInventory\Agent\Tools\PartNumber\*.*
+   SetOutPath "$R0\perl\agent\FusionInventory\Agent\Tools\PartNumber"
+   File /r "${FIA_DIR}\lib\FusionInventory\Agent\Tools\PartNumber\*.*"
+
    ; Install $R0\perl\agent\FusionInventory\Agent\XML\*.*
    SetOutPath "$R0\perl\agent\FusionInventory\Agent\XML"
    File /r "${FIA_DIR}\lib\FusionInventory\Agent\XML\*.*"
