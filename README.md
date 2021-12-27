@@ -61,9 +61,7 @@ It has more purposes, of course. The following are some of them.
 
 See [Changes.txt file](Changes.txt)
 
-## Automatic build integration
-
-This project uses [Appveyor CI platform](https://ci.appveyor.com/project/fusioninventory/fusioninventory-agent-windows-installer) to build the installer
+## Dependencies
 
 Softwares used for building:
 
@@ -91,22 +89,7 @@ See [Legacy build section in Readme.txt file](Readme.txt)
 FusionInventory project websites:
 
 * main site: <http://www.fusioninventory.org>
-* make feature requests:
-  <http://fusioninventory.userecho.com>
-* forum: <http://forum.fusioninventory.org>
-
-FusionInventory community Telegram group:
-
-* link: <https://t.me/fusioninventory>
-
-FusionInventory project mailing lists:
-
-* <http://lists.alioth.debian.org/mailman/listinfo/fusioninventory-user>
-* <http://lists.alioth.debian.org/mailman/listinfo/fusioninventory-devel>
-
-FusionInventory project IRC channel:
-
-* `#FusionInventory` on FreeNode IRC Network
+* contact ways: <http://fusioninventory.org/resources/>
 
 ## Bug reporting
 
