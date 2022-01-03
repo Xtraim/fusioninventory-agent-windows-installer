@@ -93,7 +93,7 @@ FusionInventory project websites:
 
 ## Bug reporting
 
-Please, follow [our bug reporting documetation](http://fusioninventory.org/documentation/bugreport/) to report any issues.
+Please, follow [our bug reporting documentation](http://fusioninventory.org/documentation/bugreport/) to report any issues.
 
 ## License
 
